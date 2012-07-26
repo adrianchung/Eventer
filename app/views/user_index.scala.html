@@ -1,0 +1,11 @@
+@(userId: ObjectId, events: Iterator[Event])
+
+@import helper._
+
+@main(userId+" | HOME") {
+    <ul>
+        @events.map { event =>
+        <li><a href="@routes.Events.getEventById(userId, event.id)">@event.id</a></li>
+        }
+    </ul>
+}

@@ -1,0 +1,21 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                                  controllers.Events.index
+GET     /events/:userId                    controllers.Events.getEvents(userId:ObjectId)
+GET     /events/:userId/:eventId           controllers.Events.getEventById(userId:ObjectId, eventId: ObjectId)
+
+GET     /api1_0/events                     controllers.EventsApi.getAllEvents()
+GET     /api1_0/events/:userId             controllers.EventsApi.getEvents(userId: ObjectId)
+GET     /api1_0/events/:userId/:eventId    controllers.EventsApi.getEventById(userId: ObjectId, eventId: ObjectId)
+POST    /api1_0/events/:userId             controllers.EventsApi.createEvent(userId: ObjectId)
+PUT     /api1_0/events/:userId/:eventId    controllers.EventsApi.updateEvent(userId: ObjectId, eventId: ObjectId)
+DELETE  /api1_0/events/:userId/:eventId    controllers.EventsApi.deleteEvent(userId: ObjectId, eventId: ObjectId)
+
+PUT     /api1_0/events/attendees/:userId/:eventId     controllers.EventsApi.joinEvent(userId: ObjectId, eventId: ObjectId)
+DELETE  /api1_0/events/attendees/:userId/:eventId    controllers.EventsApi.leaveEvent(userId: ObjectId, eventId: ObjectId)
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)

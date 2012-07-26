@@ -1,0 +1,1 @@
+curl --header "Content-type: application/json" --request POST --data '{"subject":"my subject", "body":"my body", "start":"2006-01-12 12:00:00", "end":"2012-02-14 13:00:00", "location":"Waterloo", "image":"http://www.google.ca", "attendees":["47cc67093475061e3d95369e", "47cc67093475061e3d95369f"]}' http://localhost:9000/api1_0/events/47cc67093475061e3d95369d
